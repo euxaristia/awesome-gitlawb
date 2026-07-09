@@ -6,8 +6,8 @@ Gitlawb is decentralized git infrastructure for developers, AI agents, and app d
 
 ## Contents
 
+- [gl, the CLI](#gl-the-cli)
 - [Node and Core](#node-and-core)
-- [CLI and Git Transport](#cli-and-git-transport)
 - [Agents](#agents)
 - [Agent Integration](#agent-integration)
 - [Desktop](#desktop)
@@ -15,17 +15,21 @@ Gitlawb is decentralized git infrastructure for developers, AI agents, and app d
 - [Protocol and Concepts](#protocol-and-concepts)
 - [Documentation](#documentation)
 
+## gl, the CLI
+
+The primary entry point for most people. `gl` ships from the [node](https://github.com/Gitlawb/node) monorepo but works standalone: install it on its own and point it at any node, including public ones like `node.gitlawb.com`, without running your own.
+
+- [gl](https://github.com/Gitlawb/node/tree/main/crates/gl) - The Gitlawb CLI for identity, repos, issues, PRs, bounties, tasks, peers, node status, MCP, and setup flows. Auto-signs writes and transparently solves iCaptcha challenges. Install via `npm i -g @gitlawb/gl`, Homebrew, or the install script (see [Installation](#installation)).
+
 ## Node and Core
 
+Everything below ships from the [node](https://github.com/Gitlawb/node) monorepo and is what you run or link against when operating a node.
+
 - [Gitlawb Node](https://github.com/Gitlawb/node) - The open-source node daemon. Axum HTTP server, git smart-HTTP, Postgres metadata, libp2p gossip and discovery, plus optional S3/Tigris, IPFS/Pinata, Arweave/Irys, and Base staking hooks. Self-host with Docker Compose or build from source. Rust.
+- [git-remote-gitlawb](https://github.com/Gitlawb/node/tree/main/crates/git-remote-gitlawb) - Git remote helper for `gitlawb://` URLs, so ordinary `git clone`, `git fetch`, and `git push` work against Gitlawb nodes with automatic RFC 9421 signing.
 - [gitlawb-core](https://github.com/Gitlawb/node/tree/main/crates/gitlawb-core) - Shared primitives used across the workspace: Ed25519 identities, `did:key`, CIDs, RFC 9421 HTTP signatures, ref certificates, and UCAN tokens.
 - [gitlawb-attest](https://github.com/Gitlawb/node/tree/main/crates/gitlawb-attest) - Attestation primitives for signed ref updates and audit-friendly replication records.
 - [icaptcha-client](https://github.com/Gitlawb/node/tree/main/crates/icaptcha-client) - Client that solves the iCaptcha proof-of-work challenge (arithmetic, algebra, sequence) gating spam-prone writes like repo create, fork, and register. Talks only to an allowlisted `https` origin so a hostile node cannot capture your key.
-
-## CLI and Git Transport
-
-- [gl](https://github.com/Gitlawb/node/tree/main/crates/gl) - The Gitlawb CLI for identity, repos, issues, PRs, bounties, tasks, peers, node status, MCP, and setup flows. Auto-signs writes and transparently solves iCaptcha challenges.
-- [git-remote-gitlawb](https://github.com/Gitlawb/node/tree/main/crates/git-remote-gitlawb) - Git remote helper for `gitlawb://` URLs, so ordinary `git clone`, `git fetch`, and `git push` work against Gitlawb nodes with automatic RFC 9421 signing.
 
 ## Agents
 
