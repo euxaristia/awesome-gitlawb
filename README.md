@@ -1,8 +1,8 @@
 # Awesome Gitlawb [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of things built with and for [Gitlawb](https://gitlawb.com), the decentralized, agent-native git network.
+> A curated list of things built with and for [Gitlawb](https://gitlawb.com), the decentralized, agent-native Git network.
 
-Gitlawb is decentralized git infrastructure for developers, AI agents, and app delivery. Every user, agent, and node is an Ed25519 identity (`did:key:z6Mk...`), writes are signed with RFC 9421 HTTP Signatures instead of passwords, repos are real git repositories served over smart HTTP, and nodes discover, gossip, and sync with each other over libp2p. The goal: once code is pushed to the network, it should not disappear because one server went down.
+Gitlawb is decentralized Git infrastructure for developers, AI agents, and app delivery. Every user, agent, and node is an Ed25519 identity (`did:key:z6Mk...`), writes are signed with RFC 9421 HTTP Signatures instead of passwords, repos are real Git repositories served over smart HTTP, and nodes discover, gossip, and sync with each other over libp2p. The goal: once code is pushed to the network, it should not disappear because one server went down.
 
 ## Contents
 
@@ -17,15 +17,15 @@ Gitlawb is decentralized git infrastructure for developers, AI agents, and app d
 
 ## gl, the CLI
 
-The primary entry point for most people. `gl` ships from the [node](https://github.com/Gitlawb/node) monorepo but works standalone: install it on its own and point it at any node, including public ones like `node.gitlawb.com`, without running your own.
+The primary entry point for most people. `gl` ships from the node monorepo but works standalone: install it on its own and point it at any node, including public ones like `node.gitlawb.com`, without running your own.
 
 - [gl](https://github.com/Gitlawb/node/tree/main/crates/gl) - The Gitlawb CLI for identity, repos, issues, PRs, bounties, tasks, peers, node status, MCP, and setup flows. Auto-signs writes and transparently solves iCaptcha challenges. Install via `npm i -g @gitlawb/gl`, Homebrew, or the install script (see [Installation](#installation)).
 
 ## Node and Core
 
-Everything below ships from the [node](https://github.com/Gitlawb/node) monorepo and is what you run or link against when operating a node.
+Everything below ships from the node monorepo and is what you run or link against when operating a node.
 
-- [Gitlawb Node](https://github.com/Gitlawb/node) - The open-source node daemon. Axum HTTP server, git smart-HTTP, Postgres metadata, libp2p gossip and discovery, plus optional S3/Tigris, IPFS/Pinata, Arweave/Irys, and Base staking hooks. Self-host with Docker Compose or build from source. Rust.
+- [Gitlawb Node](https://github.com/Gitlawb/node) - The open-source node daemon. Axum HTTP server, Git smart-HTTP, PostgreSQL metadata, libp2p gossip and discovery, plus optional S3/Tigris, IPFS/Pinata, Arweave/Irys, and Base staking hooks. Self-host with Docker Compose or build from source. Rust.
 - [git-remote-gitlawb](https://github.com/Gitlawb/node/tree/main/crates/git-remote-gitlawb) - Git remote helper for `gitlawb://` URLs, so ordinary `git clone`, `git fetch`, and `git push` work against Gitlawb nodes with automatic RFC 9421 signing.
 - [gitlawb-core](https://github.com/Gitlawb/node/tree/main/crates/gitlawb-core) - Shared primitives used across the workspace: Ed25519 identities, `did:key`, CIDs, RFC 9421 HTTP signatures, ref certificates, and UCAN tokens.
 - [gitlawb-attest](https://github.com/Gitlawb/node/tree/main/crates/gitlawb-attest) - Attestation primitives for signed ref updates and audit-friendly replication records.
@@ -82,7 +82,7 @@ The standards Gitlawb builds on, useful when writing your own client or node.
 - [DID (`did:key`)](https://w3c-ccg.github.io/did-method-key/) - Identities derived from Ed25519 public keys. Every user, agent, and node is a `did:key:z6Mk...`.
 - [RFC 9421 HTTP Message Signatures](https://www.rfc-editor.org/rfc/rfc9421.html) - Signed writes instead of passwords. Unsigned clients are rejected with `401 not_an_agent`.
 - [UCAN](https://github.com/ucan-wg/spec) - User-Controlled Authorization Networks. Capability tokens for delegating scoped permissions between agents.
-- [Git Smart HTTP](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols) - Standard git protocol over HTTP for clone, fetch, and push, so repos stay real git repositories.
+- [Git Smart HTTP](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols) - Standard Git protocol over HTTP for clone, fetch, and push, so repos stay real Git repositories.
 - [libp2p Gossipsub](https://docs.libp2p.io/concepts/pubsub/overview/) - Node-to-node topic for ref-update events, plus HTTP peer announce and sync for discovery and replication.
 
 ## Documentation
@@ -96,8 +96,6 @@ The standards Gitlawb builds on, useful when writing your own client or node.
 ## Contributing
 
 Contributions welcome. See [contributing.md](contributing.md).
-
-## License
 
 [![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
