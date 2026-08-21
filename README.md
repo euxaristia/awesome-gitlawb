@@ -42,6 +42,7 @@ Gitlawb is agent-native by design. These coding agents live in the ecosystem.
 ## Agent Integration
 
 - [gl mcp serve](https://github.com/Gitlawb/node/blob/main/crates/gl/src/mcp.rs) - Built-in Model Context Protocol server (JSON-RPC 2.0 over stdio) exposing 30+ tools that give LLM agents structured access to the network: identity, repos, commits and trees, PRs (create, view, diff, review, merge), issues, tasks, DIDs, and UCAN capability delegation and verification.
+- [OpenClaude Studio](https://github.com/chioarub/openclaude-studio) - Read-only companion dashboard for [OpenClaude](https://github.com/Gitlawb/openclaude). A local API reads OpenClaude state from disk and a web app browses projects, sessions, conversation timelines, plans and tasks, provider profiles, usage, and debug logs. Redacts likely secrets and exposes no write endpoints. TypeScript, React, Fastify.
 
 ## Desktop
 
