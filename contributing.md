@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for helping curate Awesome Gitlawb.
+Thanks for helping curate Awesome Twigpine.
 
 ## What belongs here
 
-Anything built with or for the [Gitlawb](https://gitlawb.com) network:
+Anything built with or for the [Twigpine](https://twigpine.com) network:
 
 - Nodes, clients, and CLIs
 - Git transport helpers and libraries
